@@ -1,4 +1,4 @@
-module Styles exposing (btn, buttonGroup, buttonHeadersFont, largeScreen, liC, mediumScreen, paragraphBodyFont, paragraphHeader, paragraphHeadersFont, siteHeaderFont, smallScreen, spacedSection, theme, tinyScreen)
+module Styles exposing (btn, buttonFont, buttonGroup, buttonHeadersFont, fontMono, largeScreen, mediumScreen, paragraphBodyFont, paragraphHeader, paragraphHeadersFont, siteHeader, siteHeaderFont, smallScreen, spacedSection, squareList, styledBottomView, styledButtonGroupContainer, styledButtonGroupWithHeading, styledButtonHeading, styledCell, styledGitHubLogo, styledLeftPane, styledLi, styledMyGrid, styledRightPane, styledRow, styledSiteContainer, styledTopView, theme, tinyScreen)
 
 import Css exposing (..)
 import Css.Media exposing (maxWidth, minWidth, only, screen, withMedia)
@@ -30,8 +30,8 @@ btn =
     styled button [ buttonFont, height (px 45), backgroundColor transparent, border zero, cursor pointer ]
 
 
-liC : List (Attribute msg) -> List (Html msg) -> Html msg
-liC =
+styledLi : List (Attribute msg) -> List (Html msg) -> Html msg
+styledLi =
     styled li [ marginBottom (px 5) ]
 
 
@@ -134,10 +134,157 @@ buttonHeadersFont =
         ]
 
 
+styledBottomView =
+    let
+        fRow =
+            flexDirection row
+
+        fColumn =
+            flexDirection column
+    in
+    styled div [ displayFlex, fColumn, largeScreen [ fRow ] ]
+
+
+styledButtonGroupContainer =
+    let
+        tiny =
+            [ flexDirection row, alignItems start, marginTop (px 10) ]
+
+        small =
+            [ flexDirection row, alignItems start, marginTop (px 15) ]
+
+        medium =
+            [ flexDirection row, alignItems start, marginTop (px 20) ]
+
+        large =
+            [ flexDirection column, justifyContent spaceBetween, marginTop (px 25), paddingLeft (px 25) ]
+    in
+    styled div [ displayFlex, tinyScreen tiny, smallScreen small, mediumScreen medium, largeScreen large ]
+
+
+styledLeftPane =
+    let
+        tiny =
+            [ flexDirection column, alignItems center ]
+
+        small =
+            [ flexDirection column, alignItems center ]
+
+        medium =
+            [ flexDirection column, alignItems center ]
+
+        large =
+            [ flexDirection row ]
+    in
+    styled div [ displayFlex, tinyScreen tiny, smallScreen small, mediumScreen medium, largeScreen large ]
+
+
+styledTopView =
+    let
+        divLarge =
+            [ textAlign left ]
+
+        divTinySmallMedium =
+            [ textAlign center ]
+    in
+    styled div [ tinyScreen divTinySmallMedium, smallScreen divTinySmallMedium, mediumScreen divTinySmallMedium, largeScreen divLarge ]
+
+
+styledButtonGroupWithHeading =
+    let
+        buttonGroupMargin =
+            margin2 zero (px 30)
+
+        buttonGroupTinyMargin =
+            margin2 zero (px 15)
+    in
+    styled div [ displayFlex, alignItems center, flexDirection column, tinyScreen [ buttonGroupTinyMargin ], smallScreen [ buttonGroupMargin ], mediumScreen [ buttonGroupMargin ] ]
+
+
+styledRightPane =
+    styled div [ flex (int 2), paragraphBodyFont, lineHeight (rem 1.3), marginTop (pct 5), largeScreen [ marginTop zero ] ]
+
+
+siteHeader =
+    let
+        hTiny =
+            [ fontSize (px 28) ]
+
+        hSmall =
+            [ fontSize (px 35) ]
+
+        hMedium =
+            [ fontSize (px 50) ]
+
+        hLarge =
+            [ fontSize (px 65) ]
+    in
+    styled h1
+        [ margin2 (rem 3.5) zero
+        , siteHeaderFont
+        , tinyScreen hTiny
+        , smallScreen hSmall
+        , mediumScreen hMedium
+        , largeScreen hLarge
+        ]
+
+
 siteHeaderFont : Style
 siteHeaderFont =
     Css.batch
-        [ fontFamilies [ "O4B" ]
+        [ fontFamilies [ "TitleBitmap", "monospace" ]
         , fontSize (vw 4)
         , color theme.titleColor
         ]
+
+
+styledMyGrid =
+    let
+        tinyAndSmallSize =
+            [ width (vw 100), height (vw 100) ]
+
+        mediumSize =
+            [ width (px 700), height (px 700) ]
+
+        largeSize =
+            [ width (px 600), height (px 600) ]
+    in
+    styled div [ displayFlex, flexDirection column, tinyScreen tinyAndSmallSize, smallScreen tinyAndSmallSize, mediumScreen mediumSize, largeScreen largeSize ]
+
+
+styledGitHubLogo =
+    let
+        topRightPosition =
+            [ top (px 15), right (px 15) ]
+
+        bottomRightPosition =
+            [ bottom (px 10), right (px 10) ]
+    in
+    styled img [ fill theme.white, position absolute, height (px 30), width (px 30), tinyScreen bottomRightPosition, smallScreen bottomRightPosition, mediumScreen bottomRightPosition, largeScreen topRightPosition ]
+
+
+styledSiteContainer =
+    let
+        mediumAndLargeDiv =
+            [ padding4 zero (pct 5) (pct 2) (pct 5) ]
+
+        tinyAndSmallDiv =
+            [ padding4 zero (pct 4) (pct 2) (pct 4) ]
+    in
+    styled div [ displayFlex, flexDirection column, height (pct 100), tinyScreen tinyAndSmallDiv, smallScreen tinyAndSmallDiv, mediumScreen mediumAndLargeDiv, largeScreen mediumAndLargeDiv ]
+
+
+styledRow =
+    styled div [ displayFlex, flex (int 1) ]
+
+
+styledButtonHeading =
+    styled h1 [ buttonHeadersFont ]
+
+
+styledCell =
+    styled div [ flex (int 1), margin (px 0) ]
+
+
+squareList =
+    styled ul [ listStyleType square ]

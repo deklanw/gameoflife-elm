@@ -28,6 +28,7 @@ body {
 }
 
 @font-face {
-  font-family: 'O4B';
-  src: url('/04B_03_.OTF');
+  font-family: 'TitleBitmap';
+  font-display: auto;
+  src: url('./assets/04B.otf');
 }
