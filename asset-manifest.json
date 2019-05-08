@@ -1,11 +1,11 @@
 {
-  "main.css": "/game-of-life/static/css/main.3c558edf.chunk.css",
-  "main.js": "/game-of-life/static/js/main.fac1cc4a.chunk.js",
-  "main.css.map": "/game-of-life/static/css/main.3c558edf.chunk.css.map",
-  "main.js.map": "/game-of-life/static/js/main.fac1cc4a.chunk.js.map",
-  "runtime~main.js": "/game-of-life/static/js/runtime~main.7037fc5f.js",
-  "runtime~main.js.map": "/game-of-life/static/js/runtime~main.7037fc5f.js.map",
-  "vendors~main.js": "/game-of-life/static/js/vendors~main.3ca81432.chunk.js",
-  "vendors~main.js.map": "/game-of-life/static/js/vendors~main.3ca81432.chunk.js.map",
-  "index.html": "/game-of-life/index.html"
+  "main.css": "/gameoflife-elm/static/css/main.3c558edf.chunk.css",
+  "main.js": "/gameoflife-elm/static/js/main.fdda1aa9.chunk.js",
+  "main.css.map": "/gameoflife-elm/static/css/main.3c558edf.chunk.css.map",
+  "main.js.map": "/gameoflife-elm/static/js/main.fdda1aa9.chunk.js.map",
+  "runtime~main.js": "/gameoflife-elm/static/js/runtime~main.abb67b8d.js",
+  "runtime~main.js.map": "/gameoflife-elm/static/js/runtime~main.abb67b8d.js.map",
+  "vendors~main.js": "/gameoflife-elm/static/js/vendors~main.3ca81432.chunk.js",
+  "vendors~main.js.map": "/gameoflife-elm/static/js/vendors~main.3ca81432.chunk.js.map",
+  "index.html": "/gameoflife-elm/index.html"
 }
