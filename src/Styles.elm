@@ -157,7 +157,7 @@ styledButtonGroupContainer =
             [ flexDirection row, alignItems start, marginTop (px 20) ]
 
         large =
-            [ flexDirection column, justifyContent spaceBetween, marginTop (px 25), paddingLeft (px 25) ]
+            [ flexDirection column, justifyContent spaceBetween, paddingLeft (px 25) ]
     in
     styled div [ displayFlex, tinyScreen tiny, smallScreen small, mediumScreen medium, largeScreen large ]
 
