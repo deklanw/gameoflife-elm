@@ -3,7 +3,7 @@
 https://deklanw.github.io/gameoflife-elm/
 
 
-[![Screenshot of primary UI](https://i.imgur.com/blzh99x.png)](https://deklanw.github.io/gameoflife-elm/)
+<a href="https://deklanw.github.io/gameoflife-elm/"><img src="https://i.imgur.com/blzh99x.png" alt="Screenshot of primary UI" width=520></a>
 
 
 ## About
